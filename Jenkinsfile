@@ -25,6 +25,12 @@ pipeline {
                 sh "docker build -t kaji/works-with-heroku-1.0 ."
 
             }
+             stage("Docker deployement"){
+              steps{
+                 sh "docker run -d -p 8070:8080 kaji/works-with-heroku-1.0"
+
+             }
+             }
 
         }
     }
