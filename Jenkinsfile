@@ -20,5 +20,12 @@ pipeline {
   -Dsonar.login=sqp_3a5ce4e49bd278be09c3218937aa808ec46c6b7c'
             }
         }
+         stage("build Docker image"){
+            steps{
+                sh "docker build -t kaji/works-with-heroku-1.0 ."
+
+            }
+
+        }
     }
 }
