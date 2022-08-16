@@ -22,13 +22,13 @@ pipeline {
         }
          stage("build Docker image"){
             steps{
-                sh "docker build -t kaji/works-with-heroku-1.0 ."
+                sh "docker build -t admin/works-with-heroku-1.0 ."
 
             }
          }
              stage("Docker deployement"){
               steps{
-                 sh "docker run -d -p 8071:8080 kaji1/works-with-heroku-1.0"
+                 sh "docker run -d -p 8072:8080 admin/works-with-heroku-1.0"
 
              }
              }
