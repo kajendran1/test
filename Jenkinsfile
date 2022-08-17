@@ -22,13 +22,13 @@ pipeline {
         }
          stage("build Docker image"){
             steps{
-                sh "docker build -t kajabro/works-with-heroku-3.0 ."
+               sh "docker build -t abbas/works-with-heroku-1.0 ."
 
             }
          }
              stage("Docker deployement"){
               steps{
-                 sh "docker run -d -p 8080:8080 kajabro/works-with-heroku-3.0"
+                 sh "docker run -d -p 8081:8080 abbas/works-with-heroku-1.0"
 
              }
              }
