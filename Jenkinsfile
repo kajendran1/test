@@ -15,20 +15,20 @@ pipeline {
         stage("sonar"){
             steps{
                 sh 'mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=sonar12 \
-  -Dsonar.host.url=http://65.1.144.54:9000 \
-  -Dsonar.login=sqp_3a5ce4e49bd278be09c3218937aa808ec46c6b7c'
+  -Dsonar.projectKey=test \
+  -Dsonar.host.url=http://43.205.122.178:9000 \
+  -Dsonar.login=sqp_6d07e4ce92efee322fcd7a2fa18113b82033506d'
             }
         }
          stage("build Docker image"){
             steps{
-                sh "docker build -t suresh1/works-with-heroku-2.0 ."
+                sh "docker build -t kajabro/works-with-heroku-3.0 ."
 
             }
          }
              stage("Docker deployement"){
               steps{
-                 sh "docker run -d -p 8060:8080 suresh1/works-with-heroku-2.0"
+                 sh "docker run -d -p 8080:8080 kajabro/works-with-heroku-3.0"
 
              }
              }
